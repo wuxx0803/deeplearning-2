@@ -13,7 +13,7 @@ def load_data():
     images = image_mat[key]
     return images
 
-## 
+## normalize patches.. 
 def normalize(patches):
     norm = (0.1, 0.9)
     pstd = 3 * np.std(patches)
@@ -21,7 +21,7 @@ def normalize(patches):
     patches = ((patches + 1) * ((norm[1] - norm[0]) / 2.0)) + norm[0]
     return patches
 
-
+## generate the patches from the image files 
 def gen_patch(image, num_patches=10000, size=(8, 8)):
     patch_data = []
     x, y = size
